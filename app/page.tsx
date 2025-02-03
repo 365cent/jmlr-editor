@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { JMLREditor } from "./components/jmlr-editor"
 import { JMLRPreview } from "./components/jmlr-preview"
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   const [content, setContent] = useState({
@@ -25,6 +26,7 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <JMLREditor content={content} setContent={setContent} />
         <JMLRPreview content={content} />
+        <Analytics />
       </div>
     </main>
   )
